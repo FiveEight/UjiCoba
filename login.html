@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="overlay" id="overlay"></div>
+  <div class="role-alert" id="roleAlert">
+    <select id="role">
+      <option value="peneliti">Pilih Peran: Login sebagai Peneliti</option>
+      <option value="reviewer">Pilih Peran: Login sebagai Reviewer</option>
+      <option value="admin">Pilih Peran: Login sebagai Admin</option>
+    </select>
+    <button onclick="selectRole()">Masuk</button>
+  </div>
+  <div class="login-container">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <h2>Sistem Penelitian</h2>
+    <p>member of ASTRA</p>
+    <input type="text" id="username" placeholder="****@politechnic.astra.ac.id">
+    <input type="password" id="password" placeholder="********">
+    <button onclick="validateCredentials()">Masuk</button>
+  </div>
+
+  <script>
+    function validateCredentials() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (!username || !password) {
+        alert('Data belum lengkap! Silakan isi semua kolom.');
+        return;
+      }
+
+      const validUsername = '0920240027';
+      const validPassword = '123';
+
+      if (username === validUsername && password === validPassword) {
+        showRoleAlert();
+      } else {
+        alert('Username atau password salah!');
+      }
+    }
+
+    function showRoleAlert() {
+      const roleAlert = document.getElementById('roleAlert');
+      const overlay = document.getElementById('overlay');
+      roleAlert.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+
+    function selectRole() {
+      const role = document.getElementById('role').value;
+      console.log('Selected role:', role); // Debugging log
+      const roleAlert = document.getElementById('roleAlert');
+      const overlay = document.getElementById('overlay');
+      roleAlert.style.display = 'none';
+      overlay.style.display = 'none';
+      if (role === 'peneliti') {
+        window.location.href = './dashboard.html';
+      } else if (role === 'reviewer') {
+        window.location.href = './reviewer.html';
+      } else if (role === 'admin') {
+        window.location.href = './admin.html';
+      }
+    }
+
+    function closeAlert() {
+      const roleAlert = document.getElementById('roleAlert');
+      const overlay = document.getElementById('overlay');
+      roleAlert.style.display = 'none';
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>

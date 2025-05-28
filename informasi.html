@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Informasi - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <button id="btnLogout">Log Out</button>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="informasi.html"class="active">Information</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <a href="template_dokumen.html">Template Dokumen </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Proposal</button>
+      <div class="dropdown-content">
+        <a href="ajukan_proposal.html">Ajukan Proposal</a>
+        <a href="konfirmasi.html">konfirmasi keikutsertaan</a>
+        <a href="daftar_proposal.html">Daftar Proposal</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Perkembangan</button>
+      <div class="dropdown-content">
+        <a href="laporan_perkembangan.html"> Laporan Perkembangan</a>
+        <a href="daftar_lap.perkembangan.html">Daftar Laporan Perkembangan</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Akhir</button>
+      <div class="dropdown-content">
+        <a href="laporan_akhir.html"> Laporan Akhir</a>
+        <a href="isi_laporan.html"> Daftar Laporan Akhir</a>
+      </div>
+    </div>
+  </aside>
+    
+
+  <main class="main-content">
+    <div class="header">
+      <p>Alex (Karyawan)</p>
+      <p>Login Terakhir: 18 Mei 2025 WIB</p>
+    </div>
+
+    <h2>Daftar Informasi</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Informasi</th>
+            <th>Tanggal Dibuat</th>
+            <th>Tanggal Diubah</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Buku Panduan</td>
+            <td>12-12-2024</td>
+            <td>14-12-2024</td>
+            <td>
+              <i class="fa-solid fa-download aksi-icon" title="Unduh"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="sidebar.js"></script>
+
+</body>
+</html>
