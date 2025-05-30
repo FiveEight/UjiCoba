@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Akhir - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <button id="btnLogout">Log Out</button>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="informasi.html">Information</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <a href="template_dokumen.html">Template Dokumen </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Proposal</button>
+      <div class="dropdown-content">
+        <a href="ajukan_proposal.html">Ajukan Proposal</a>
+        <a href="konfirmasi.html">konfirmasi keikutsertaan</a>
+        <a href="daftar_proposal.html">Daftar Proposal</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Perkembangan</button>
+      <div class="dropdown-content">
+        <a href="laporan_perkembangan.html"> Laporan Perkembangan</a>
+        <a href="daftar_lap.perkembangan.html">Daftar Laporan Perkembangan</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Akhir</button>
+      <div class="dropdown-content">
+        <a href="laporan_akhir.html"class="active"> Laporan Akhir</a>
+        <a href="isi_laporan.html"> Daftar Laporan Akhir</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="header">
+      <p>Alex (Karyawan)</p>
+      <p>Login Terakhir: 30 April 2025 WIB</p>
+    </div>
+
+    <div class="table-container">
+      <div class="search-add">
+        <input type="text" placeholder="Cari">
+        <button class="btn green">Tambah</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>ID Laporan Akhir</th>
+            <th>Judul</th>
+            <th>Tanggal Dibuat</th>
+            <th>Tanggal Diubah</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>PKM/2025/0701</td>
+            <td>PKM 1</td>
+            <td>1-Mar-2025 14:20:30</td>
+            <td>1-Mar-2025 14:20:30</td>
+            <td><button class="btn blue">Detail</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>PKM/2025/0702</td>
+            <td>PKM 2</td>
+            <td>1-Mar-2025 14:20:30</td>
+            <td>1-Mar-2025 14:20:30</td>
+            <td><button class="btn blue">Detail</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button>⟨</button>
+        <span>1</span>
+        <button>⟩</button>
+        <button class="btn grey">Kembali</button>
+      </div>
+    </div>
+  </main>
+  <script src="sidebar.js"></script>
+
+</body>
+</html>

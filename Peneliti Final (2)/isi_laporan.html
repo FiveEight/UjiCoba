@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Akhir - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <button id="btnLogout">Log Out</button>
+    <a href="dashboard.html" >Dashboard</a>
+    <a href="informasi.html">Information</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <a href="template_dokumen.html">Template Dokumen </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Proposal</button>
+      <div class="dropdown-content">
+        <a href="ajukan_proposal.html">Ajukan Proposal</a>
+        <a href="konfirmasi.html">konfirmasi keikutsertaan</a>
+        <a href="daftar_proposal.html">Daftar Proposal</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Perkembangan</button>
+      <div class="dropdown-content">
+        <a href="laporan_perkembangan.html"> Laporan Perkembangan</a>
+        <a href="daftar_lap.perkembangan.html">Daftar Laporan Perkembangan</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Akhir</button>
+      <div class="dropdown-content">
+        <a href="laporan_akhir.html"> Laporan Akhir</a>
+        <a href="isi_laporan.html"class="active"> Daftar Laporan Akhir</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="header">
+      <p><strong>Boy Wiliam (Peneliti)</strong><br><span>Login Terakhir: 30 April 2025 WIB</span></p>
+      <img src="email.png" alt="email" width="30">
+    </div>
+
+    <div class="breadcrumb">
+      <a href="#">Sistem Penelitian</a> / <a href="#">Laporan Akhir</a> - Proses Laporan Akhir
+    </div>
+
+    <h2>Tambah Laporan Akhir</h2>
+
+    <form class="form-container">
+      <fieldset>
+        <legend>Data Laporan Akhir</legend>
+
+        <label>ID Proposal<span class="required">*</span></label>
+        <input type="text" placeholder="Tulis ID Proposal">
+
+        <label>Abstrak Laporan Akhir<span class="required">*</span></label>
+        <textarea rows="4" placeholder="Tulis abstrak laporan akhir..."></textarea>
+
+        <label>Dokumen Proposal<span class="required">*</span></label>
+        <a href="#" class="download-link">Unduh berkas</a>
+
+        <label>Skema Penelitian<span class="required">*</span></label>
+        <select>
+          <option>-- Pilih Skema Penelitian --</option>
+          <option>Skema A</option>
+          <option>Skema B</option>
+        </select>
+
+        <label>Total Dana</label>
+        <input type="text" placeholder="xxxxxxxxxxxxxx">
+
+        <label>Dokumen Laporan Akhir (.pdf, .docx, ZIP)</label>
+        <input type="file">
+      </fieldset>
+
+      <h3>Daftar Karyawan</h3>
+      <div class="search-add">
+        <input type="text" placeholder="Cari Karyawan">
+        <button class="btn green">+ Tambah</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jabatan Terstruktur</th>
+            <th>Prodi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4">Tidak ada data</td></tr>
+        </tbody>
+      </table>
+      <p>Total Karyawan</p>
+
+      <h3>Daftar Mahasiswa</h3>
+      <div class="search-add">
+        <input type="text" placeholder="Cari Mahasiswa">
+        <button class="btn green">+ Tambah</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Prodi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="4">Tidak ada data</td></tr>
+        </tbody>
+      </table>
+      <p>Total Karyawan</p>
+
+      <div class="form-buttons">
+        <button type="button" class="btn grey">Kembali</button>
+        <button type="submit" class="btn blue">Simpan</button>
+      </div>
+    </form>
+  </main>
+  <script src="sidebar.js"></script>
+
+</body>
+</html>

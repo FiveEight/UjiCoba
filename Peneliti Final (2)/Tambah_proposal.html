@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <button id="btnLogout">Log Out</button>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="informasi.html">Information</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <a href="template_dokumen.html">Template Dokumen </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Proposal</button>
+      <div class="dropdown-content">
+        <a href="ajukan_proposal.html"class="active">Ajukan Proposal</a>
+        <a href="konfirmasi.html">konfirmasi keikutsertaan</a>
+        <a href="daftar_proposal.html">Daftar Proposal</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Perkembangan</button>
+      <div class="dropdown-content">
+        <a href="laporan_perkembangan.html"> Laporan Perkembangan</a>
+        <a href="daftar_lap.perkembangan.html">Daftar Laporan Perkembangan</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Akhir</button>
+      <div class="dropdown-content">
+        <a href="laporan_akhir.html"> Laporan Akhir</a>
+        <a href="isi_laporan.html"> Daftar Laporan Akhir</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+  <div class="header">
+    <p>Boy William (Peneliti)</p>
+    <p>Login Terakhir: 30 April 2025 WIB</p>
+  </div>
+
+  <h2>Tambah Proposal</h2>
+
+  <section class="detail-box">
+    <h3>Data Pengajuan Proposal</h3>
+
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Judul Proposal <span style="color:red;">*</span></label>
+        <input type="text" placeholder="Masukkan judul proposal">
+      </div>
+
+      <div class="form-group full">
+        <label>Abstrak Proposal <span style="color:red;">*</span></label>
+        <textarea placeholder="Masukkan abstrak..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Skema Penelitian <span style="color:red;">*</span></label>
+        <select>
+          <option value="">-- Pilih Skema Penelitian --</option>
+          <option>Skema A</option>
+          <option>Skema B</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Total Dana <span style="color:red;">*</span></label>
+        <input type="number" placeholder="Rp">
+      </div>
+
+      <div class="form-group">
+        <label>Dokumen Proposal <span style="color:red;">*</span></label>
+        <input type="file" accept=".pdf,.docx,.zip">
+      </div>
+    </div>
+
+    <!-- Daftar Karyawan -->
+    <div id="tim-karyawan" class="tim-peneliti" style="margin-top: 30px;">
+
+      <h4>Daftar Karyawan</h4>
+      <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <input type="text" placeholder="Cari Karyawan..." style="flex: 1;">
+        <button class="btn-tambah" style="background: green; color: white;" onclick="bukaPopup('tim-karyawan')">+ Tambah</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jabatan Terstruktur</th>
+            <th>Prodi</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5">Tidak ada data</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Daftar Mahasiswa -->
+    <div id="tim-mahasiswa" class="tim-peneliti" style="margin-top: 30px;">
+
+      <h4>Daftar Mahasiswa</h4>
+      <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+        <input type="text" placeholder="Cari Mahasiswa..." style="flex: 1;">
+        <button class="btn-tambah" style="background: green; color: white;" onclick="bukaPopup('tim-mahasiswa')">+ Tambah</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Jabatan Terstruktur</th>
+            <th>Prodi</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="5">Tidak ada data</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 10px;">
+      <button class="btn-back">Kembali</button>
+      <button class="btn-tambah" style="background: #2f80ed; color: white;" onclick="simpanProposal()">Simpan</button>
+    </div>
+
+    <!-- POPUP TAMBAH ANGGOTA -->
+<div id="popup" class="popup-overlay">
+  <div class="popup-box">
+    <h3>Pilih Anggota</h3>
+    <table id="popup-table">
+      <thead>
+        <tr>
+          <th>Pilih</th>
+          <th>Nama</th>
+          <th>Jabatan</th>
+          <th>Prodi</th>
+          <th>Deskripsi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data dummy akan diisi dengan JS -->
+      </tbody>
+    </table>
+    <div style="margin-top: 20px; text-align: right;">
+      <button onclick="tutupPopup()" class="btn-back">Kembali</button>
+      <button onclick="simpanAnggota()" class="btn-tambah" style="background: #2f80ed; color: white;">Simpan</button>
+    </div>
+  </div>
+</div>
+
+  </section>
+</main>
+
+  <script src="sidebar.js"></script>
+  <script>
+function hapusAnggota(button) {
+  const row = button.parentElement.parentElement;
+  const tbody = row.parentElement;
+  row.remove();
+
+  // Perbarui nomor urut
+  const rows = tbody.querySelectorAll('tr');
+  if (rows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6">Tidak ada data</td></tr>`;
+    return;
+  }
+
+  rows.forEach((tr, index) => {
+    tr.querySelector('td').textContent = index + 1;
+  });
+}
+
+    // Fungsi untuk menampilkan popup
+  const dummyAnggota = [
+  { nama: 'Andi Saputra', jabatan: 'Dosen', prodi: 'Informatika', deskripsi: 'Peneliti utama' },
+  { nama: 'Rina Kartika', jabatan: 'Asisten Peneliti', prodi: 'Mesin', deskripsi: 'Pendukung riset' },
+  { nama: 'Dodi Prasetyo', jabatan: 'Mahasiswa', prodi: 'Teknik Industri', deskripsi: 'Data Entry' }
+];
+
+let tabelAktifId = null;
+
+function bukaPopup(idTarget) {
+  tabelAktifId = idTarget;
+  const popup = document.getElementById('popup');
+  const tbody = document.getElementById('popup-table').querySelector('tbody');
+  tbody.innerHTML = ''; // Bersihkan isi sebelumnya
+
+  dummyAnggota.forEach((anggota, index) => {
+    const row = `<tr>
+      <td><input type="checkbox" data-index="${index}"></td>
+      <td>${anggota.nama}</td>
+      <td>${anggota.jabatan}</td>
+      <td>${anggota.prodi}</td>
+      <td>${anggota.deskripsi}</td>
+    </tr>`;
+    tbody.insertAdjacentHTML('beforeend', row);
+  });
+
+  popup.style.display = 'flex';
+}
+
+function simpanAnggota() {
+  if (!tabelAktifId) return;
+  const checkboxes = document.querySelectorAll('#popup-table input[type="checkbox"]:checked');
+  const tableTarget = document.querySelector(`#${tabelAktifId} tbody`);
+
+  const existingRows = tableTarget.querySelectorAll('tr');
+  let currentIndex = existingRows.length;
+  if (currentIndex === 1 && existingRows[0].textContent.includes('Tidak ada data')) {
+    tableTarget.innerHTML = '';
+    currentIndex = 0;
+  }
+
+  checkboxes.forEach((checkbox, i) => {
+    const index = checkbox.getAttribute('data-index');
+    const anggota = dummyAnggota[index];
+    const newRow = `<tr>
+      <td>${currentIndex + i + 1}</td>
+      <td>${anggota.nama}</td>
+      <td>${anggota.jabatan}</td>
+      <td>${anggota.prodi}</td>
+      <td>${anggota.deskripsi}</td>
+      <td><button onclick="hapusAnggota(this)" style="color:red;">Hapus</button></td>
+    </tr>`;
+    tableTarget.insertAdjacentHTML('beforeend', newRow);
+  });
+
+  
+}
+
+function tutupPopup() {
+  const popup = document.getElementById('popup');
+  popup.style.display = 'none';
+  }
+
+function simpanProposal() {
+  const judul = document.querySelector('input[placeholder="Masukkan judul proposal"]').value;
+  const abstrak = document.querySelector('textarea').value;
+  const skema = document.querySelector('select').value;
+  const dana = document.querySelector('input[type="number"]').value;
+
+  const proposal = {
+    judul,
+    abstrak,
+    skema,
+    dana,
+    tanggal: new Date().toLocaleDateString("id-ID")
+  };
+
+  // Ambil data yang sudah ada
+  const existing = JSON.parse(localStorage.getItem('proposalList')) || [];
+
+  // Tambah data baru
+  existing.push(proposal);
+
+  // Simpan kembali ke localStorage
+  localStorage.setItem('proposalList', JSON.stringify(existing));
+
+  // Pindah ke halaman AjukanProposal
+  window.location.href = 'ajukan_proposal.html';
+}
+
+</script>
+
+</body>
+</html>

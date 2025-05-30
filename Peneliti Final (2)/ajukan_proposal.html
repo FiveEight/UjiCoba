@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - ASTRAtech</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="logo.png" alt="ASTRAtech Logo" class="logo">
+    <button id="btnLogout">Log Out</button>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="informasi.html">Information</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Data</button>
+      <div class="dropdown-content">
+        <a href="template_dokumen.html">Template Dokumen </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Proposal</button>
+      <div class="dropdown-content">
+        <a href="ajukan_proposal.html" class="active">Ajukan Proposal</a>
+        <a href="konfirmasi.html">konfirmasi keikutsertaan</a>
+        <a href="daftar_proposal.html">Daftar Proposal</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Perkembangan</button>
+      <div class="dropdown-content">
+        <a href="laporan_perkembangan.html"> Laporan Perkembangan</a>
+        <a href="daftar_lap.perkembangan.html">Daftar Laporan Perkembangan</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Laporan Akhir</button>
+      <div class="dropdown-content">
+        <a href="laporan_akhir.html"> Laporan Akhir</a>
+        <a href="isi_laporan.html"> Daftar Laporan Akhir</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="header">
+      <p>Alex (Karyawan)</p>
+      <p>Login Terakhir: 30 April 2025 WIB</p>
+    </div>
+
+    <h2>Ajukan Proposal</h2>
+
+    <div class="header-box">
+      <a href="tambah_proposal.html" class="btn-tambah" id="btnTambahProposal">+ Tambah Proposal</a>
+
+
+      <div class="search-group">
+        <input type="text" placeholder="Cari judul proposal..." id="searchInput" />
+        <button id="btnCari">Cari</button>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>ID Proposal</th>
+            <th>Skema</th>
+            <th>Total Dana</th>
+            <th>Status</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody id="proposal-body">
+          <!-- Baris akan ditambahkan oleh JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+<script src="sidebar.js"></script>
+</body>
+</html>
